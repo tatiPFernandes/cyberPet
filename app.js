@@ -61,11 +61,13 @@ const virtualPet = new Animal()
 function loop() {
     setTimeout(function () {
       if (virtualPet.boredCount  + 4 >= 0) {
-    virtualPet.happyLevel -= 4;
+    virtualPet.boredCount -= 4;
         if ((virtualPet.hunger > 50 ||virtualPet.thirsty >= 60 ||virtualPet.boredCount >= 50) && virtualPet.boredCount + 10 >= 0) {
-        virtualPet.happyLevel -= 10;
+        virtualPet.boredCount -= 10;
         } else if ((virtualPet.hungery >= 50 ||virtualPet.thirsty >= 50 ) && virtualPet.boredCount + 10 <= 0) {
         virtualPet.boredCount = 0;
         }loop()} 10000;
     }
     )}
+
+    loop()
